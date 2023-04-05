@@ -1,17 +1,22 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "the-3labs-team/laravel-google-news-sitemap",
+    "description": "Laravel Google Sitemap Feed",
     "keywords": [
-        ":vendor_name",
+        "the-3labs-team",
         "laravel",
-        ":package_slug"
+        "laravel-google-news-sitemap"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/the-3labs-team/laravel-google-news-sitemap",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Stefano Novelli",
+            "email": "murdercode@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Marco Crivellari",
+            "email": "crivellari.marco90@gmail.com",
             "role": "Developer"
         }
     ],
