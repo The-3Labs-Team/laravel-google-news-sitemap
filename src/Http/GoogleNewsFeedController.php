@@ -3,7 +3,7 @@
 namespace The3LabsTeam\GoogleNewsFeed\Http;
 
 use Illuminate\Support\Str;
-use Spatie\Feed\Helpers\ResolveFeedItems;
+use The3LabsTeam\GoogleNewsFeed\Helpers\ResolveGoogleNewsFeedItems;
 use The3LabsTeam\GoogleNewsFeed\GoogleNewsFeed;
 
 class GoogleNewsFeedController
@@ -18,7 +18,7 @@ class GoogleNewsFeedController
 
         abort_unless($feed, 404);
 
-        $items = ResolveFeedItems::resolve($name, $feed['items']);
+        $items = ResolveGoogleNewsFeedItems::resolve($name, $feed['items']);
 
         return new GoogleNewsFeed(
             $feed['title'],
