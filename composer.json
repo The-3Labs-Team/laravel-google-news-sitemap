@@ -40,13 +40,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "The3LabsTeam\\GoogleNewsFeed\\": "src",
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "The3LabsTeam\\GoogleNewsFeed\\Tests\\": "tests"
         }
     },
     "scripts": {

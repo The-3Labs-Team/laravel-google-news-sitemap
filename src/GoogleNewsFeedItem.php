@@ -27,7 +27,8 @@ class GoogleNewsFeedItem
 
     public function __construct(array $data = [])
     {
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value)
+        {
             $this->$key = $value;
         }
     }
@@ -88,7 +89,8 @@ class GoogleNewsFeedItem
 
     public function timestamp(): string
     {
-        if ($this->feed->format() === 'rss') {
+        if ($this->feed->format() === 'rss')
+        {
             return $this->updated->toRssString();
         }
 
@@ -99,8 +101,10 @@ class GoogleNewsFeedItem
     {
         $requiredFields = ['id', 'title', 'keywords', 'pubblicationDate', 'link', 'pubblicationLanguage', 'pubblicationName'];
 
-        foreach ($requiredFields as $requiredField) {
-            if (is_null($this->$requiredField)) {
+        foreach ($requiredFields as $requiredField)
+        {
+            if (is_null($this->$requiredField))
+            {
                 throw InvalidFeedItem::missingField($this, $requiredField);
             }
         }
@@ -108,7 +112,8 @@ class GoogleNewsFeedItem
 
     public function __get($key)
     {
-        if (! isset($this->$key)) {
+        if (!isset($this->$key))
+        {
             throw new Exception("Property `{$key}` doesn't exist");
         }
 
