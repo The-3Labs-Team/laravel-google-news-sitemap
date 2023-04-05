@@ -3,8 +3,8 @@
 namespace The3LabsTeam\GoogleNewsFeed\Http;
 
 use Illuminate\Support\Str;
-use The3LabsTeam\GoogleNewsFeed\GoogleNewsFeed;
 use Spatie\Feed\Helpers\ResolveFeedItems;
+use The3LabsTeam\GoogleNewsFeed\GoogleNewsFeed;
 
 class FeedController
 {

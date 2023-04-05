@@ -3,10 +3,10 @@
 namespace The3LabsTeam\GoogleNewsFeed;
 
 use Illuminate\Support\Collection;
-use The3LabsTeam\GoogleNewsFeed\Helpers\Path;
 use Spatie\Feed\Http\FeedController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use The3LabsTeam\GoogleNewsFeed\Helpers\Path;
 
 class GoogleNewsFeedServiceProvider extends PackageServiceProvider
 {
@@ -27,13 +27,11 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
     {
         $router = $this->app['router'];
 
-        $router->macro('feeds', function ($baseUrl = '') use ($router)
-        {
-            foreach (config('google-news-sitemap.feeds') as $name => $configuration)
-            {
+        $router->macro('feeds', function ($baseUrl = '') use ($router) {
+            foreach (config('google-news-sitemap.feeds') as $name => $configuration) {
                 $url = Path::merge($baseUrl, $configuration['url']);
 
-                $router->get($url, '\\' . FeedController::class)->name("feeds.{$name}");
+                $router->get($url, '\\'.FeedController::class)->name("feeds.{$name}");
             }
         });
     }
