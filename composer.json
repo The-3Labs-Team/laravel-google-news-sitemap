@@ -40,7 +40,7 @@
     },
     "autoload": {
         "psr-4": {
-            "The3LabsTeam\\GoogleNewsFeed\\": "src",
+            "The3LabsTeam\\GoogleNewsFeed\\": "src"
         }
     },
     "autoload-dev": {
