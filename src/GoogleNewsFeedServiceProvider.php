@@ -3,9 +3,7 @@
 namespace The3LabsTeam\GoogleNewsFeed;
 
 use Illuminate\Support\Collection;
-use Spatie\Feed\Components\FeedLinks;
-use Spatie\Feed\Helpers\ConfigurationValidator;
-use Spatie\Feed\Helpers\Path;
+use The3LabsTeam\GoogleNewsFeed\Helpers\Path;
 use Spatie\Feed\Http\FeedController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -17,25 +15,12 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-google-news-feed')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasViewComposer('feed::links', function ($view)
-            {
-                $view->with('feeds', $this->feeds());
-            })
-            ->hasViewComponent('', FeedLinks::class);
+            ->hasViews();
     }
 
     public function packageRegistered()
     {
         $this->registerRouteMacro();
-    }
-
-    public function packageBooted()
-    {
-        if (!app()->runningUnitTests())
-        {
-            ConfigurationValidator::validate();
-        }
     }
 
     protected function registerRouteMacro(): void
@@ -44,7 +29,7 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
 
         $router->macro('feeds', function ($baseUrl = '') use ($router)
         {
-            foreach (config('feed.feeds') as $name => $configuration)
+            foreach (config('google-news-sitemap.feeds') as $name => $configuration)
             {
                 $url = Path::merge($baseUrl, $configuration['url']);
 
@@ -56,5 +41,10 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
     protected function feedsGoogleNews(): Collection
     {
         return collect(config('google-news-sitemap.feeds'));
+    }
+
+    public function packageBooted()
+    {
+        //
     }
 }
