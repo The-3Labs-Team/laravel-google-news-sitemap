@@ -66,7 +66,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "The3LabsTeam\\GoogleNewsFeed\\GoogleNewsServiceProvider"
+                "The3LabsTeam\\GoogleNewsFeed\\GoogleNewsFeedServiceProvider"
             ],
             "aliases": {
                 "GoogleNewsFeed": "The3LabsTeam\\GoogleNewsFeed\\Facades\\GoogleNewsFeed"
