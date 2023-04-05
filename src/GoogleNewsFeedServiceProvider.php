@@ -18,8 +18,7 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
             ->name('laravel-google-news-feed')
             ->hasConfigFile()
             ->hasViews()
-            ->hasViewComposer('feed::links', function ($view)
-            {
+            ->hasViewComposer('feed::links', function ($view) {
                 $view->with('feeds', $this->feeds());
             })
             ->hasViewComponent('', FeedLinks::class);
@@ -32,8 +31,7 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
 
     public function packageBooted()
     {
-        if (!app()->runningUnitTests())
-        {
+        if (! app()->runningUnitTests()) {
             ConfigurationValidator::validate();
         }
     }
@@ -42,13 +40,11 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
     {
         $router = $this->app['router'];
 
-        $router->macro('feeds', function ($baseUrl = '') use ($router)
-        {
-            foreach (config('feed.feeds') as $name => $configuration)
-            {
+        $router->macro('feeds', function ($baseUrl = '') use ($router) {
+            foreach (config('feed.feeds') as $name => $configuration) {
                 $url = Path::merge($baseUrl, $configuration['url']);
 
-                $router->get($url, '\\' . FeedController::class)->name("feeds.{$name}");
+                $router->get($url, '\\'.FeedController::class)->name("feeds.{$name}");
             }
         });
     }

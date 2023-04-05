@@ -12,6 +12,6 @@ class Cdata
             ']]>' => ']]&gt;', // CDEnd needs to be escaped.
         ];
 
-        return '<![CDATA[' . str_replace(array_keys($replace), array_values($replace), $data) . ']]>';
+        return '<![CDATA['.str_replace(array_keys($replace), array_values($replace), $data).']]>';
     }
 }
