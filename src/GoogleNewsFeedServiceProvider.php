@@ -4,7 +4,7 @@ namespace The3LabsTeam\GoogleNewsFeed;
 
 use Illuminate\Support\Collection;
 use The3LabsTeam\GoogleNewsFeed\Helpers\Path;
-use Spatie\Feed\Http\FeedController;
+use The3LabsTeam\GoogleNewsFeed\Http\GoogleNewsFeedController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -33,7 +33,7 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
             {
                 $url = Path::merge($baseUrl, $configuration['url']);
 
-                $router->get($url, '\\' . FeedController::class)->name("feeds.{$name}");
+                $router->get($url, '\\' . GoogleNewsFeedController::class)->name("feeds.{$name}");
             }
         });
     }

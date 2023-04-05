@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 use The3LabsTeam\GoogleNewsFeed\GoogleNewsFeed;
 use Spatie\Feed\Helpers\ResolveFeedItems;
 
-class FeedController
+class GoogleNewsFeedController
 {
     public function __invoke()
     {
