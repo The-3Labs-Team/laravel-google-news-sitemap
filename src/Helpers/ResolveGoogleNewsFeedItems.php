@@ -13,12 +13,10 @@ class ResolveGoogleNewsFeedItems
 
         $newResolver = $resolver;
 
-        if (is_array($resolver) && !str_contains($resolver[0], '@'))
-        {
+        if (is_array($resolver) && ! str_contains($resolver[0], '@')) {
             $newResolver = implode('@', array_slice($resolver, 0, 2));
 
-            if (count($resolver) > 2)
-            {
+            if (count($resolver) > 2) {
                 $newResolver = array_merge([$newResolver], array_slice($resolver, 2, true));
             }
         }
