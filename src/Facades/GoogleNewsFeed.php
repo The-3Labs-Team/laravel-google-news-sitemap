@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \VendorName\Skeleton\Skeleton
  */
-class GoogleNewsFeedFacade extends Facade
+class GoogleNewsFeed extends Facade
 {
     protected static function getFacadeAccessor()
     {

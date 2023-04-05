@@ -66,10 +66,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "The3LabsTeam\\GoogleNewsFeed\\GoogleNewsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "GoogleNewsFeed": "The3LabsTeam\\GoogleNewsFeed\\Facades\\GoogleNewsFeed"
             }
         }
     },
