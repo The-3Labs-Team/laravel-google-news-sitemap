@@ -21,8 +21,7 @@ class GoogleNewsFeed implements Responsable
         protected string $publicationDate = '',
         protected string $publicationLanguage = '',
         protected string $format = 'rss'
-    )
-    {
+    ) {
         $this->url = $url ?? request()->url();
 
         $this->feedItems = $this->items->map(fn ($feedable) => $this->castToFeedItem($feedable));
@@ -46,7 +45,7 @@ class GoogleNewsFeed implements Responsable
         ]);
 
         return new Response($contents, 200, [
-            'Content-Type' => GoogleNewsFeedContentType::forResponse($this->format) . ';charset=UTF-8',
+            'Content-Type' => GoogleNewsFeedContentType::forResponse($this->format).';charset=UTF-8',
         ]);
     }
 
@@ -55,15 +54,13 @@ class GoogleNewsFeed implements Responsable
         return $this->format;
     }
 
-    protected function castToFeedItem(array | GoogleNewsFeedItem | GoogleNewsFeedable $feedable): GoogleNewsFeedItem
+    protected function castToFeedItem(array|GoogleNewsFeedItem|GoogleNewsFeedable $feedable): GoogleNewsFeedItem
     {
-        if (is_array($feedable))
-        {
+        if (is_array($feedable)) {
             $feedable = new GoogleNewsFeedItem($feedable);
         }
 
-        if ($feedable instanceof GoogleNewsFeedItem)
-        {
+        if ($feedable instanceof GoogleNewsFeedItem) {
             $feedable->feed = $this;
 
             $feedable->validate();
@@ -94,15 +91,13 @@ class GoogleNewsFeed implements Responsable
 
     protected function lastUpdated(): string
     {
-        if ($this->feedItems->isEmpty())
-        {
+        if ($this->feedItems->isEmpty()) {
             return '';
         }
 
         $updatedAt = $this->feedItems
             ->sortBy(fn ($feedItem) => $feedItem->updated)
             ->last()->updated;
-
 
         return $this->format === 'rss'
             ? $updatedAt->toRssString()
