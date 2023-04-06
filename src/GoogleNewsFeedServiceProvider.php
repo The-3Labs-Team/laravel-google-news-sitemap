@@ -27,7 +27,7 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
     {
         $router = $this->app['router'];
 
-        $router->macro('feeds', function ($baseUrl = '') use ($router)
+        $router->macro('google-news-feeds', function ($baseUrl = '') use ($router)
         {
             foreach (config('google-news-feed.feeds') as $name => $configuration)
             {
