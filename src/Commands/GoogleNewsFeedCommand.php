@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace The3LabsTeam\GoogleNewsFeed\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class GoogleNewsFeedCommand extends Command
 {
     public $signature = 'skeleton';
 
