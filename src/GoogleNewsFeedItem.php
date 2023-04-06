@@ -66,21 +66,21 @@ class GoogleNewsFeedItem
         return $this;
     }
 
-    public function pubblicationName(string $publicationName): self
+    public function publicationName(string $publicationName): self
     {
         $this->publicationName = $publicationName;
 
         return $this;
     }
 
-    public function pubblicationLanguage(string $publicationLanguage): self
+    public function publicationLanguage(string $publicationLanguage): self
     {
         $this->publicationLanguage = $publicationLanguage;
 
         return $this;
     }
 
-    public function pubblicationDate(string $publicationDate): self
+    public function publicationDate(string $publicationDate): self
     {
         $this->publicationDate = $publicationDate;
 
