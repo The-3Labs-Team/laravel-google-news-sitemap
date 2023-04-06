@@ -12,7 +12,7 @@ class GoogleNewsFeedController
     {
         $feeds = config('google-news-feed.feeds');
 
-        $name = Str::after(app('router')->currentRouteName(), 'feeds1.');
+        $name = Str::after(app('router')->currentRouteName(), 'googleFeeds.');
 
         $feed = $feeds[$name] ?? null;
 
