@@ -10,7 +10,7 @@ class GoogleNewsFeedController
 {
     public function __invoke()
     {
-        $feeds = config('feed.feeds');
+        $feeds = config('google-news-feed.feeds');
 
         $name = Str::after(app('router')->currentRouteName(), 'feeds.');
 
@@ -24,12 +24,12 @@ class GoogleNewsFeedController
             $feed['title'],
             $items,
             request()->url(),
-            $feed['view'] ?? 'feed::atom',
+            $feed['view'] ?? 'feed::rss',
             $feed['keywords'] ?? '',
             $feed['publicationName'] ?? '',
             $feed['publicationDate'] ?? '',
             $feed['publicationLanguage'] ?? 'it-IT',
-            $feed['format'] ?? 'atom',
+            $feed['format'] ?? 'rss',
         );
     }
 }
