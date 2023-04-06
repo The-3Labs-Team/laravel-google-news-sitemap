@@ -27,11 +27,13 @@ class GoogleNewsFeedServiceProvider extends PackageServiceProvider
     {
         $router = $this->app['router'];
 
-        $router->macro('google-news-feeds', function ($baseUrl = '') use ($router) {
-            foreach (config('google-news-feed.feeds') as $name => $configuration) {
+        $router->macro('google-news-feed', function ($baseUrl = '') use ($router)
+        {
+            foreach (config('google-news-feed.feeds') as $name => $configuration)
+            {
                 $url = Path::merge($baseUrl, $configuration['url']);
 
-                $router->get($url, '\\'.GoogleNewsFeedController::class)->name("feeds.{$name}");
+                $router->get($url, '\\' . GoogleNewsFeedController::class)->name("google-news-feed.{$name}");
             }
         });
     }
