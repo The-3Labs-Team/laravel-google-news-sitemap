@@ -3,7 +3,7 @@
 namespace The3LabsTeam\GoogleNewsFeed;
 
 use Exception;
-use Spatie\Feed\Exceptions\InvalidFeedItem;
+use The3LabsTeam\GoogleNewsFeed\Exceptions\InvalidFeedItem;
 
 class GoogleNewsFeedItem
 {
@@ -99,7 +99,7 @@ class GoogleNewsFeedItem
 
     public function validate(): void
     {
-        $requiredFields = ['id', 'title', 'keywords', 'pubblicationDate', 'link', 'pubblicationLanguage', 'pubblicationName'];
+        $requiredFields = ['id', 'title', 'keywords', 'publicationDate', 'link', 'publicationLanguage', 'publicationName'];
 
         foreach ($requiredFields as $requiredField)
         {
