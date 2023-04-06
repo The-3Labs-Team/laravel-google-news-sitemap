@@ -24,7 +24,7 @@ class GoogleNewsFeedController
             $feed['title'],
             $items,
             request()->url(),
-            $feed['view'] ?? 'feed::rss',
+            $feed['view'] ?? 'google-news-feed::rss',
             $feed['keywords'] ?? '',
             $feed['publicationName'] ?? '',
             $feed['publicationDate'] ?? '',

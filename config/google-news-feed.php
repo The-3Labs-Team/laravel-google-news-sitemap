@@ -6,6 +6,8 @@ return [
             'items' => '',
             'title' => 'My feed',
             'url' => '',
+            'language' => 'en',
+            'description' => ''
         ],
     ],
 ];
