@@ -7,7 +7,7 @@ return [
             'title' => 'My feed',
             'url' => '',
             'language' => 'en',
-            'description' => ''
+            'description' => '',
         ],
     ],
 ];
