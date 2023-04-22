@@ -8,17 +8,17 @@
             <news:news>
                 <news:publication>
                     <news:name>
-                        {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->publicationName) !!}
+                        {{ $item->publicationName) }}
                     </news:name>
                     <news:language>
-                        {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->publicationLanguage) !!}
+                        {{ $item->publicationLanguage) }}
                     </news:language>
                 </news:publication>
                 <news:publication_date>
                     {{ $item->publicationDate }}
                 </news:publication_date>
                 <news:title>
-                    {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->title) !!}
+                    {{ $item->title) }}
                 </news:title>
             </news:news>
         </url>
