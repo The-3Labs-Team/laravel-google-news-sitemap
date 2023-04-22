@@ -4,23 +4,24 @@
 
     @foreach($items as $item)
         <url>
-            <loc>{{ $item->link }}</loc>
+            <loc>{{ url($item->link) }}</loc>
             <news:news>
                 <news:publication>
                     <news:name>
-                        {{ $item->publicationName }}
+                        {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->publicationName) !!}
                     </news:name>
                     <news:language>
-                        {{ $item->publicationLanguage }}
+                        {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->publicationLanguage) !!}
                     </news:language>
                 </news:publication>
                 <news:publication_date>
-                    {{ $item->publicationDate }}
+                    {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->publicationDate ) !!}
                 </news:publication_date>
                 <news:title>
-                    {{ $item->title }}
+                    {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->title) !!}
                 </news:title>
             </news:news>
         </url>
     @endforeach
+
 </urlset>
