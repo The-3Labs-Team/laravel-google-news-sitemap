@@ -15,7 +15,7 @@
                     </news:language>
                 </news:publication>
                 <news:publication_date>
-                    {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->publicationDate ) !!}
+                    {{ $item->publicationDate }}
                 </news:publication_date>
                 <news:title>
                     {!! The3LabsTeam\GoogleNewsFeed\Helpers\Cdata::out($item->title) !!}
