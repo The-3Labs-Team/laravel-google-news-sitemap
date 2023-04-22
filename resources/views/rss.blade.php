@@ -18,7 +18,7 @@
                     {{ $item->publicationDate }}
                 </news:publication_date>
                 <news:title>
-                    {{ $item->title) }}
+                    {{ $item->title }}
                 </news:title>
             </news:news>
         </url>
