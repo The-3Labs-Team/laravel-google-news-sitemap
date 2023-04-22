@@ -4,14 +4,14 @@
 
     @foreach($items as $item)
         <url>
-            <loc>{{ url($item->link) }}</loc>
+            <loc>{{ $item->link }}</loc>
             <news:news>
                 <news:publication>
                     <news:name>
-                        {{ $item->publicationName) }}
+                        {{ $item->publicationName }}
                     </news:name>
                     <news:language>
-                        {{ $item->publicationLanguage) }}
+                        {{ $item->publicationLanguage }}
                     </news:language>
                 </news:publication>
                 <news:publication_date>
