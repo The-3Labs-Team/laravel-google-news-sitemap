@@ -81,7 +81,7 @@ class GoogleNewsFeedItem
 
     public function publicationDate(string $publicationDate): self
     {
-        $this->publicationDate = $publicationDate;
+        $this->publicationDate = \Carbon\Carbon::parse($publicationDate)->toIso8601String();
 
         return $this;
     }
