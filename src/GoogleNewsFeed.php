@@ -2,11 +2,11 @@
 
 namespace The3LabsTeam\GoogleNewsFeed;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use The3LabsTeam\GoogleNewsFeed\Helpers\GoogleNewsFeedContentType;
-use Carbon\Carbon;
 
 class GoogleNewsFeed implements Responsable
 {
