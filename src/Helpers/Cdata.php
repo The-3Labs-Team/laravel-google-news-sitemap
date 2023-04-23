@@ -12,6 +12,9 @@ class Cdata
             ']]>' => ']]&gt;', // CDEnd needs to be escaped.
         ];
 
+        // Trim the data to avoid leading/trailing whitespace.
+        $data = trim($data);
+
         return str_replace(array_keys($replace), array_values($replace), $data);
     }
 }

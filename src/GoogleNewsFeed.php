@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use The3LabsTeam\GoogleNewsFeed\Helpers\GoogleNewsFeedContentType;
+use Carbon\Carbon;
 
 class GoogleNewsFeed implements Responsable
 {
@@ -36,7 +37,8 @@ class GoogleNewsFeed implements Responsable
             'keywords' => $this->keywords,
             'publicationName' => $this->publicationName,
             'publicationLanguage' => $this->publicationLanguage,
-            'publicationDate' => $this->publicationDate,
+            'publicationDate' => $this->publicationDate ? Carbon::parse($this->publicationDate)
+                ->toIso8601String() : $this->lastUpdated(),
         ];
 
         $contents = view($this->view, [
@@ -67,18 +69,6 @@ class GoogleNewsFeed implements Responsable
 
             return $feedable;
         }
-        /*
-        if (!$feedable instanceof GoogleNewsFeedable)
-        {
-            throw InvalidFeedItem::notFeedable($feedable);
-        }
-
-
-        if (!$feedItem instanceof GoogleNewsFeedItem)
-        {
-            throw InvalidFeedItem::notAFeedItem($feedItem);
-        }
-        */
 
         $feedItem = $feedable->toGoogleNewsFeedItem();
 
