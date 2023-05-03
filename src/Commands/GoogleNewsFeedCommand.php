@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class GoogleNewsFeedCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-google-news-sitemap';
 
     public $description = 'My command';
 

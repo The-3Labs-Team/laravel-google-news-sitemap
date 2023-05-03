@@ -5,7 +5,7 @@ namespace The3LabsTeam\GoogleNewsFeed\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \VendorName\Skeleton\Skeleton
+ * @see \The3LabsTeam\LaravelGoogleNewsSitemap\LaravelGoogleNewsSitemap
  */
 class GoogleNewsFeed extends Facade
 {
