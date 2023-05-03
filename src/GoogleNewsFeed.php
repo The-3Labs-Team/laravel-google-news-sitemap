@@ -2,7 +2,6 @@
 
 namespace The3LabsTeam\GoogleNewsFeed;
 
-use Carbon\Carbon;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
