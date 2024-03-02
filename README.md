@@ -1,3 +1,5 @@
+> ⚠️ This repo as been archived. Please use our new [Laravel Google News Sitemap](https://github.com/The-3Labs-Team/laravel-googlenews-sitemap/) Package instead.
+
 # Laravel Google News Sitemap
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/the-3labs-team/laravel-google-news-sitemap.svg?style=flat-square)](https://packagist.org/packages/the-3labs-team/laravel-google-news-sitemap)
